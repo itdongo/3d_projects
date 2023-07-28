@@ -1,4 +1,5 @@
-    # ignore generated gcode and stl files
+    # ignore generated gcode and stl and 3mf files
     *.gcode
     *.stl
+    *.3mf
     # except foo.html which is maintained by hand
