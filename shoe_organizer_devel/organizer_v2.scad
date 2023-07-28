@@ -144,9 +144,48 @@ module side() {
         
     }
 
+module legs() {
+  
+    difference() {
+        union() {
+            //translate([ 0, depth, 0 ])
+    
+                //cube ([ width, side_depth, height ]);
+            //legs
+            /*
+            translate ([ width-leg_width, side_depth-leg_depth, height ])
+                cube ([ leg_width, leg_depth, max_height-height ]);
+            translate ([ 0, side_depth-leg_depth, height ])
+                cube ([ leg_width, leg_depth, max_height-height ]);
+            */
+            //dovetail support
+            //translate ([ leg_width, 0, leg_depth ])
+          
+                cube ([ width-leg_width*3, leg_depth*1.5, leg_depth ]);
+        }
+        
+        translate([ depth, 1, 2.5 ])
+        rotate([ 90, 0, 270 ])
+        cylinder( h = depth, r = 2, $fn =3 );
+        
+    }
+  }
+  
+  module notch_test(){
+    union(){
+        mirror([0, 1, 0 ])
+             cube ([ width-leg_width*3, leg_depth*1.5, leg_depth ]);
+          translate([ depth-5, 1, 2.5 ])
+        rotate([ 90, 0, 270 ])
+        cylinder( h = depth-5, r = 1.8, $fn =3 );
+    }
+    
+  }
 
+notch_test();
+//legs();
 //center();
-//*
+/*
 translate([ 0, depth-dovetail_rad/2-.5, 0 ])
 side();
 // */
