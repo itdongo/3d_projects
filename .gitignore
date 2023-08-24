@@ -9,4 +9,9 @@
 *.jpg
 *.png
 
+# ignore compressed files
+*.zip
+*.tar
+*.rar
+
     # except foo.html which is maintained by hand
