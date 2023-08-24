@@ -1,0 +1,1 @@
+Navy Sonar Technician Emblem by newcombmc on Thingiverse: https://www.thingiverse.com/thing:4116858

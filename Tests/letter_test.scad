@@ -17,13 +17,21 @@ bottomstring = "Veteran";
 
 module topbanner() {
     difference() {
-        cube(size=[width, depth, height], center = true);
+      union() {
+        cube(size=[width, depth, .4], center = true);
         //translate([-105, -10, -1.5]) cube(size=[width/5, depth-7, height-3]);
         //translate([63.5, -10, -1.5]) cube(size=[width/5, depth-7, height-3]);
-        linear_extrude(height-1) {
-            translate([0, 0, 0 ]) text(topstring, size = letter_size, font = font, halign = "center", valign = "center", $fn = 64);
+      translate([0, 0, .2 ])  
+      linear_extrude(.4) {
+             
+          text(topstring, size = letter_size, font = font, halign = "center", valign = "center", $fn = 64);
         }
+      
+      translate([0, 0, .7 ])
+      
+        cube(size=[width, depth, .2], center = true);
     }
+  }
 }
 
 topbanner();

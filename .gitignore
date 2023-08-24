@@ -2,4 +2,11 @@
     *.gcode
     *.stl
     *.3mf
+
+# ignore graphic files
+*.gif
+*.jpeg
+*.jpg
+*.png
+
     # except foo.html which is maintained by hand
