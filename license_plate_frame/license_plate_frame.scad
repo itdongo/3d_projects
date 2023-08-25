@@ -1,13 +1,13 @@
-$fn=96;
+//$fn=96;
 
 //Plate measurements
-height = 7;
+height = 8;
 plate_width = 300;
 plate_depth = 150;
 
 //bolt holes
 h_d_between = 170;
-v_d_between = 121;
+v_d_between = 120;
 d_from_top = 15.5;
 d_from_bot = 17.5;
 d_from_side = 65;
@@ -19,10 +19,10 @@ corner_base = 20;
 corner_radius = 90;
 
 
-extension_width = 65;
+extension_width = 70;
 width = 210-extension_width;
 depth = 29;
-side_height = 97;
+side_height = 154;
 side_width = 28;
 
 left_x = -112;
@@ -31,9 +31,9 @@ left_z = 0;
 right_x=width/2+extension_width/2;
 
 //Connectors
-con_height = height;
+con_height = height/2;
 con_width = 15;
-con_depth = depth+6;
+con_depth = depth;
 
 nut_height = 2.4;
 nut_rad = 3.2;
@@ -47,6 +47,10 @@ font = "DejaVu Sans:style=Bold";
 letter_size = 18;
 topstring = "Veteran";
 bottomstring = "US Navy";
+
+fillet = side_width/2;
+
+
 
 module topbanner() {
     difference() {
@@ -104,36 +108,90 @@ module side() {
   difference() {
     union() {
       cube(size=[side_width, side_height, height], center = true );
-    }
+translate([ extension_width/2+side_width/2, side_height/2-depth/2, 0 ])
+extension();
+
+mirror([ 0, 1, 0 ])
+translate([ extension_width/2+side_width/2, side_height/2-depth/2, 0 ])
+extension();
+      }
+      // camfer the edges
+      translate([ -side_width/2+fillet/2, -side_height/2+fillet/2, 0 ]) 
+        cube(size=[fillet, fillet, height], center = true );
+      
+      mirror([0, 1, 0 ])
+      translate([ -side_width/2+fillet/2, -side_height/2+fillet/2, 0 ]) 
+        cube(size=[fillet, fillet, height], center = true );
+
+//bolt_hole();
+translate([ d_from_side, side_height/2-d_from_top, 0 ]){
+bolt_hole();
+
+translate([ 0, -v_d_between, 0 ])
+#bolt_hole();
+}
+//connector notch
+translate([ side_width/2+extension_width-con_width/2, side_height/2-con_depth/2, -con_height/2 ])
+  cube([ con_width, con_depth, con_height ], center = true);
+
+mirror([ 0, 1, 0 ])
+      translate([ side_width/2+extension_width-con_width/2, side_height/2-con_depth/2, -con_height/2 ])
+  cube([ con_width, con_depth, con_height ], center = true);
+
+// nuts
+  translate([ side_width/2+extension_width-con_width/2, side_height/2-con_depth/4, height/2-con_height+2 ])
+    cylinder( h = nut_height, r = nut_rad, $fn = 6, center = true );
+  translate([ side_width/2+extension_width-con_width/2, side_height/2-con_depth*.75, height/2-con_height+2 ])
+    cylinder( h = nut_height, r = nut_rad, $fn = 6, center = true );
+
+mirror([ 0, 1, 0 ]) {
+  translate([ side_width/2+extension_width-con_width/2, side_height/2-con_depth/4, height/2-con_height+2 ])
+    cylinder( h = nut_height, r = nut_rad, $fn = 6, center = true );
+  translate([ side_width/2+extension_width-con_width/2, side_height/2-con_depth*.75, height/2-con_height+2 ])
+    cylinder( h = nut_height, r = nut_rad, $fn = 6, center = true );
+}
+         // screw holes
+  translate([ side_width/2+extension_width-con_width/2, side_height/2-con_depth/4, 0 ])
+            #cylinder( h = screw_height, r = screw_length, center = true );
+  translate([ side_width/2+extension_width-con_width/2, side_height/2-con_depth*.75, 0 ])
+            #cylinder( h = screw_height, r = screw_length, center = true );
+
+mirror([ 0, 1, 0 ]) {
+  translate([ side_width/2+extension_width-con_width/2, side_height/2-con_depth/4, 0 ])
+            #cylinder( h = screw_height, r = screw_length, center = true );
+  translate([ side_width/2+extension_width-con_width/2, side_height/2-con_depth*.75, 0 ])
+            #cylinder( h = screw_height, r = screw_length, center = true );
+}
+
   }
+  union() {
+    translate([ -side_width/2+fillet, -side_height/2+fillet, 0 ]) 
+    cylinder( h = height, r = fillet, center = true );
+
+    mirror([0, 1, 0])
+      translate([ -side_width/2+fillet, -side_height/2+fillet, 0 ]) 
+      cylinder( h = height, r = fillet, center = true );
+
 }
+
+}
+
+
 module extension(){
-  cube([extension_width, depth+5, height ], center = true );
+  cube([extension_width, depth, height ], center = true );
 }
 
-/*              
-              //bottom mirror
-              mirror([ 0, 1, 0 ]){
-              // corner
-              translate([ corner_base*.3, side_height*.64, -20 ]) 
-              rotate([ 270, 0, 0 ]) 
-                corner( corner_base, 90, height ); //top left corner
-              
-                
-              // extension
-                translate([ extension_width/2+6, side_height/2+16.5, 0 ])
-                    cube([extension_width, depth+5, height ], center = true );
-            }
-          }
-          // bolt hole
-            translate ([ extension_width-15, side_height/2+16.5, 0 ])
-                cylinder( h = 10, r = 3, center = true );
-                
-         // connector
+module bolt_hole(){              
+  difference()
+    cylinder( h = 10, r = 3, center = true );
+}
 
-            translate([ extension_width, side_height/2+16.5, -con_height*.25 ])
-            cube([ con_width, con_depth, con_height/2 ], center = true);
-            
+                
+module connector(){
+  cube([ con_width, con_depth, con_height ], center = true);
+}
+
+/*            
          // nuts
             translate([ extension_width, side_height/2+25, 5 ])
             cylinder( h = nut_height, r = nut_rad, $fn = 6, center = true );
@@ -155,7 +213,7 @@ module extension(){
          // connector
 
             translate([ extension_width-2, side_height/2+17, -con_height*.25 ])
-            cube([ con_width, con_depth, con_height/2 ], center = true);
+            cube([ con_width, con_depth, con_height ], center = true);
             
          // nuts
             translate([ con_depth+con_width/2+2, 10, 1.75 ])
@@ -182,7 +240,7 @@ module extension(){
          mirror([ 1, 0, 0 ]) {
            
             translate([ con_depth*1.35, 2, -con_height*.25 ])
-            cube([ con_width, con_depth, con_height/2 ], center = true);
+            cube([ con_width, con_depth, con_height ], center = true);
             
          // nuts
             translate([ con_depth+con_width/2+2, 10, 1.75 ])
@@ -303,7 +361,7 @@ module leftside() {
 //topbanner();
 //bottombanner();
 //extension();
-leftside();
+side();
 //rightside();
 //inserts();
 //border();
