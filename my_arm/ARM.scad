@@ -1,5 +1,5 @@
 $fn=96;
-use <twist_lock/twist_lock.scad>;
+use </Users/darrylestes/3D_Stuff/OpenSCAD/libraries/twist_lock/twist_lock.scad>;
 //use <roundedcube/roundedcube.scad>;
 
 arm_length=135;
@@ -81,9 +81,24 @@ module arm() {
 
 } 
 
+module spool_adapter() {
+  difference() {
+    union() {
+      cube([ 46, 30, 12 ], center = true);
+    }
+    translate([ -12.25/2, 0, 0 ]){
+    #cylinder( h = 4, r = 12, center = true );
+      translate([ 46/2-20/2, 0, 0 ])
+    #cube([ 26, 24, 4 ], center = true );
+      translate([ 20, 0, 4 ])
+      #cube([ 24, 20.5, 4 ], center = true );
+    }
+  }
 
+}
 
-base();
-translate([ 10/2, base_depth/2, arm_length/2 ])
-rotate([ 0, 0, 90 ])
-arm();
+spool_adapter();
+//base();
+//translate([ 10/2, base_depth/2, arm_length/2 ])
+//rotate([ 0, 0, 90 ])
+//arm();
