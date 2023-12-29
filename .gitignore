@@ -1,13 +1,14 @@
-    # ignore generated gcode and stl and 3mf files
-    *.gcode
-    *.stl
-    *.3mf
+# ignore generated gcode and stl and 3mf files
+*.gcode
+*.stl
+*.3mf
 
 # ignore graphic files
 *.gif
 *.jpeg
 *.jpg
 *.png
+*.svg
 
 # ignore compressed files
 *.zip
