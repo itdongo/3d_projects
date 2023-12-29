@@ -1,0 +1,11 @@
+group() {
+	difference() {
+		union() {
+			cylinder($fn = 4, $fa = 12, $fs = 2, h = 185, r1 = 67.5, r2 = 82.5, center = false);
+		}
+		multmatrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 1.2], [0, 0, 0, 1]]) {
+			cylinder($fn = 4, $fa = 12, $fs = 2, h = 183.8, r1 = 65.5, r2 = 80.5, center = false);
+		}
+	}
+}
+
