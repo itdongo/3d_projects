@@ -236,8 +236,8 @@ module eye_piece()
   }
 }
             
-//base();
-//*
+base();
+/*
 rotate([ 0, 0, 0 ])
     translate([ -phone_width/2+distance_to_lens+1.6, -phone_depth/2+distance_to_lens+1.6, phone_height/2 ])
 eye_piece();
