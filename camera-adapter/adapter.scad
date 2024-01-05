@@ -34,6 +34,9 @@ screw_height=phone_height;
 
 orientaion="top";
 
+// New vars
+
+
 module base()
 {
   difference()
@@ -235,8 +238,76 @@ module eye_piece()
     }
   }
 }
-            
-base();
+
+module new_adapter()
+{
+  difference()
+  {
+    union()
+    {
+      //the phone base          
+      cube([ phone_width, phone_depth, phone_height ], center = true);
+    }
+    translate([distance_to_lens, -distance_to_lens, 0 ])
+    cylinder(phone_height, d=binoc_eyepiece_dia);
+  }
+} 
+
+module new_eye_piece()
+{
+  difference()
+  {
+    union()
+    {
+      //Eye piece reference
+      //Create the eye piece   
+      rotate_extrude( angle = 360, $fn = 96 )
+      translate( [binoc_eyepiece_radius_inside, binoc_base_width ] )       
+      translate( [0, -binoc_base_width] )
+        square([ binoc_base_width, binoc_eyepiece_height ] );
+    
+      //Add the eye piece clip
+      translate([ 0, 0, binoc_eyepiece_height ])
+      rotate_extrude( angle = 380, $fn = 96 )
+      translate( [binoc_eyepiece_radius_inside, -clip_size] )
+      rotate([ 0, 0, 90 ])
+        circle( r = clip_size, $fn = 3);
+      
+    }
+    //bolt holes
+  translate([ 0, binoc_eyepiece_radius_inside+binoc_base_width/2, 1 ])
+    {
+	   rotate([180,0,90])
+      { 
+        nutcatch_parallel("M3", clh=0.1);
+        translate([ 0, 0, 5 ])
+        #hole_through(name="M3", l=binoc_eyepiece_height/2, cld=0.1, h=0, hcld=0.4);
+      }
+    }
+  translate([ binoc_eyepiece_radius_inside+binoc_base_width/2-.5, binoc_base_width/2, 1 ])
+    {
+	   rotate([180,0,90])
+      { 
+        nutcatch_parallel("M3", clh=0.1);
+        translate([ 0, 0, 5 ])
+        #hole_through(name="M3", l=binoc_eyepiece_height/2, cld=0.1, h=0, hcld=0.4);
+      }
+    }
+  translate([ -binoc_eyepiece_radius_inside-binoc_base_width/2+.5, binoc_base_width/2, 1 ])
+    {
+	   rotate([180,0,90])
+      { 
+        #nutcatch_parallel("M3", clh=0.1);
+        translate([ 0, 0, 5 ])
+        #hole_through(name="M3", l=binoc_eyepiece_height/2, cld=0.1, h=0, hcld=0.4);
+      //#nutcatch_sidecut("M3", l=100, clk=0.1, clh=0.1, clsl=0.1);
+      }
+    }
+  }
+}
+  
+new_adapter();  
+//base();
 /*
 rotate([ 0, 0, 0 ])
     translate([ -phone_width/2+distance_to_lens+1.6, -phone_depth/2+distance_to_lens+1.6, phone_height/2 ])
