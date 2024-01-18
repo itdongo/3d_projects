@@ -1,0 +1,13 @@
+{
+  "tools": [
+    {
+      "nr": 1,
+      "path": "Endmill_2.2mm.fctb"
+    },
+    {
+      "nr": 2,
+      "path": "1.8mm.fctb"
+    }
+  ],
+  "version": 1
+}
