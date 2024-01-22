@@ -7,6 +7,10 @@
     {
       "nr": 2,
       "path": "1.8mm.fctb"
+    },
+    {
+      "nr": 3,
+      "path": "1.2mm.fctb"
     }
   ],
   "version": 1

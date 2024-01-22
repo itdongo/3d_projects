@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "name": "1.2mm005",
+  "shape": "endmill.fcstd",
+  "parameter": {
+    "Chipload": "0.000 mm",
+    "CuttingEdgeHeight": "9.000 mm",
+    "Diameter": "1.200 mm",
+    "Flutes": "0",
+    "Length": "38.000 mm",
+    "Material": "HSS",
+    "ShankDiameter": "1.200 mm",
+    "SpindleDirection": "Forward"
+  },
+  "attribute": {}
+}
