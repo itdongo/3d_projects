@@ -1,0 +1,114 @@
+{
+  "Fixtures": [
+    {
+      "G54": true
+    }
+  ],
+  "OrderOutputBy": "Fixture",
+  "Output": "C:/repos/3d_projects/%D/%d_%j.nc",
+  "Post": "grbl",
+  "PostArgs": "",
+  "SetupSheet": {
+    "ClearanceHeightExpression": "OpStockZMax+${SetupSheet}.ClearanceHeightOffset",
+    "ClearanceHeightOffset": "5.000 mm",
+    "CoolantMode": "None",
+    "FinalDepthExpression": "OpFinalDepth",
+    "HorizRapid": "0.000 mm/min",
+    "SafeHeightExpression": "OpStockZMax+${SetupSheet}.SafeHeightOffset",
+    "SafeHeightOffset": "3.000 mm",
+    "StartDepthExpression": "OpStartDepth",
+    "StepDownExpression": "OpToolDiameter",
+    "VertRapid": "0.000 mm/min"
+  },
+  "SplitOutput": false,
+  "Stock": {
+    "create": "FromBase",
+    "version": 1,
+    "xneg": "1.0 mm",
+    "xpos": "1.0 mm",
+    "yneg": "1.0 mm",
+    "ypos": "1.0 mm",
+    "zneg": "0.0 mm",
+    "zpos": "0.0 mm"
+  },
+  "Tolerance": "0.01",
+  "ToolController": [
+    {
+      "dir": "Forward",
+      "hfeed": "33.333333333333336 mm/s",
+      "hrapid": "0.0 mm/s",
+      "label": "TC: 1.4mm_endmill",
+      "name": "TC__1_4mm_endmill",
+      "nr": 4,
+      "speed": 12000.0,
+      "tool": {
+        "attribute": {},
+        "name": "1.4mm_endmill",
+        "parameter": {
+          "Chipload": "0.000 mm",
+          "CuttingEdgeHeight": "10.000 mm",
+          "Diameter": "1.400 mm",
+          "Flutes": "0",
+          "Length": "36.700 mm",
+          "Material": "HSS",
+          "ShankDiameter": "3.000 mm",
+          "SpindleDirection": "Forward"
+        },
+        "shape": "endmill.fcstd",
+        "version": 2
+      },
+      "version": 1,
+      "vfeed": "33.333333333333336 mm/s",
+      "vrapid": "0.0 mm/s",
+      "xengine": [
+        {
+          "expr": "${SetupSheet}.HorizRapid",
+          "prop": "HorizRapid"
+        },
+        {
+          "expr": "${SetupSheet}.VertRapid",
+          "prop": "VertRapid"
+        }
+      ]
+    },
+    {
+      "dir": "Forward",
+      "hfeed": "33.333333333333336 mm/s",
+      "hrapid": "0.0 mm/s",
+      "label": "TC: 2.2mm",
+      "name": "TC__2_2mm",
+      "nr": 1,
+      "speed": 12000.0,
+      "tool": {
+        "attribute": {},
+        "name": "2.2mm",
+        "parameter": {
+          "Chipload": "0.000 mm",
+          "CuttingEdgeHeight": "10.000 mm",
+          "Diameter": "2.200 mm",
+          "Flutes": "0",
+          "Length": "37.900 mm",
+          "Material": "HSS",
+          "ShankDiameter": "3.000 mm",
+          "SpindleDirection": "Forward"
+        },
+        "shape": "endmill.fcstd",
+        "version": 2
+      },
+      "version": 1,
+      "vfeed": "33.333333333333336 mm/s",
+      "vrapid": "0.0 mm/s",
+      "xengine": [
+        {
+          "expr": "${SetupSheet}.HorizRapid",
+          "prop": "HorizRapid"
+        },
+        {
+          "expr": "${SetupSheet}.VertRapid",
+          "prop": "VertRapid"
+        }
+      ]
+    }
+  ],
+  "Version": 1
+}
