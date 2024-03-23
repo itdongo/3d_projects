@@ -35,7 +35,80 @@ screw_height=phone_height;
 orientaion="top";
 
 // New vars
+adapter_edge_height=phone_height+1;
+magsafe_outside_dia=55.8;
+magsafe_inside_dia=44;
 
+
+
+module new_adapter()
+{
+  difference()
+  {
+    union()
+    {
+      //the phone base          
+      cube([ phone_width, phone_depth, phone_height ], center = true);
+
+    }
+    //Round the corners
+      translate([ -phone_width/2+phone_corner, -phone_depth/2+phone_corner, -case_height/2 ])
+      {
+        rotate([ 0, 0, 180 ])
+        rotate_extrude( angle = 90, $fn = 96 )
+        translate([ phone_edge_curve, phone_height*2 ]) //curve and z height      
+          square([ phone_edge_width, adapter_edge_height], center = true );
+      }
+      mirror([1,0,0])
+      { 
+        translate([ -phone_width/2+phone_corner, -phone_depth/2+phone_corner, -case_height/2 ])
+        {
+          rotate([ 0, 0, 180 ])
+          rotate_extrude( angle = 90, $fn = 96 )
+          translate([ phone_edge_curve, phone_height*2 ]) //curve and z height      
+            square([ phone_edge_width, adapter_edge_height], center = true );
+        }
+      }
+      mirror([0,1,0])
+      { 
+        translate([ -phone_width/2+phone_corner, -phone_depth/2+phone_corner, -case_height/2 ])
+        {
+          rotate([ 0, 0, 180 ])
+          rotate_extrude( angle = 90, $fn = 96 )
+          translate([ phone_edge_curve, phone_height*2-.1 ]) //curve and z height      
+            square([ phone_edge_width, adapter_edge_height], center = true );
+
+        }
+      }
+      mirror([1,1,0])
+      { 
+        translate([ -phone_depth/2+phone_corner, -phone_width/2+phone_corner, -case_height/2 ])
+        {
+          rotate([ 0, 0, 180 ])
+          rotate_extrude( angle = 90, $fn = 96 )
+          translate([ phone_edge_curve, phone_height*2-.1 ]) //curve and z height      
+            square([ phone_edge_width, adapter_edge_height], center = true );
+        }
+      }
+    
+    //camera notch
+    translate([ -phone_width/2+camera_notch_width/2, -phone_depth/2+camera_notch_depth/2, -phone_height/2 ])
+      cube([ camera_notch_width, camera_notch_depth, 1 ], center = true );
+   
+    //remove the core
+    translate([ -phone_width/2+distance_to_lens+screw_width_min, -phone_depth/2+distance_to_lens+screw_width_min, -phone_height/2 ])
+    cylinder( h = phone_height*2, r = binoc_eyepiece_radius_inside-5, center = true );
+
+    //magsafe ring
+    translate([0, 0, 1]) {
+      
+          #rotate_extrude( angle = 360, $fn = 96 )
+          translate([ magsafe_outside_dia/2-3, phone_height-3 ]) //curve and z height      
+            square([ magsafe_outside_dia/2-magsafe_inside_dia/2, 1], center = true ); //length and height
+  }
+  }
+  
+}
 
 module base()
 {
@@ -238,20 +311,6 @@ module eye_piece()
     }
   }
 }
-
-module new_adapter()
-{
-  difference()
-  {
-    union()
-    {
-      //the phone base          
-      cube([ phone_width, phone_depth, phone_height ], center = true);
-    }
-    translate([distance_to_lens, -distance_to_lens, 0 ])
-    cylinder(phone_height, d=binoc_eyepiece_dia);
-  }
-} 
 
 module new_eye_piece()
 {
