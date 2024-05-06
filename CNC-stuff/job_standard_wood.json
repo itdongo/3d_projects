@@ -1,0 +1,519 @@
+{
+  "Fixtures": [
+    {
+      "G54": true
+    }
+  ],
+  "OrderOutputBy": "Fixture",
+  "Post": "grbl",
+  "PostArgs": "",
+  "SplitOutput": false,
+  "Stock": {
+    "create": "FromBase",
+    "version": 1,
+    "xneg": "1.0 mm",
+    "xpos": "1.0 mm",
+    "yneg": "1.0 mm",
+    "ypos": "1.0 mm",
+    "zneg": "0.0 mm",
+    "zpos": "0.0 mm"
+  },
+  "Tolerance": "0.01",
+  "ToolController": [
+    {
+      "dir": "Forward",
+      "hfeed": "3.3333333333333335 mm/s",
+      "hrapid": "0.0 mm/s",
+      "label": "0.8mm_Endmill002",
+      "name": "__8mm_Endmill001",
+      "nr": 2,
+      "speed": 1000.0,
+      "tool": {
+        "attribute": {},
+        "name": "0.8mm_Endmill004",
+        "parameter": {
+          "Chipload": "0.00 mm",
+          "CuttingEdgeHeight": "10.00 mm",
+          "Diameter": "0.80 mm",
+          "Flutes": "0",
+          "Length": "27.00 mm",
+          "Material": "HSS",
+          "ShankDiameter": "3.17 mm",
+          "SpindleDirection": "Forward"
+        },
+        "shape": "endmill.fcstd",
+        "version": 2
+      },
+      "version": 1,
+      "vfeed": "3.3333333333333335 mm/s",
+      "vrapid": "0.0 mm/s",
+      "xengine": [
+        {
+          "expr": "${SetupSheet}.HorizRapid",
+          "prop": "HorizRapid"
+        },
+        {
+          "expr": "${SetupSheet}.VertRapid",
+          "prop": "VertRapid"
+        }
+      ]
+    },
+    {
+      "dir": "Forward",
+      "hfeed": "3.3333333333333335 mm/s",
+      "hrapid": "0.0 mm/s",
+      "label": "1.0mm_Endmill002",
+      "name": "__0mm_Endmill001",
+      "nr": 3,
+      "speed": 1000.0,
+      "tool": {
+        "attribute": {},
+        "name": "1.0mm_Endmill003",
+        "parameter": {
+          "Chipload": "0.00 mm",
+          "CuttingEdgeHeight": "10.00 mm",
+          "Diameter": "1.00 mm",
+          "Flutes": "0",
+          "Length": "27.00 mm",
+          "Material": "HSS",
+          "ShankDiameter": "3.17 mm",
+          "SpindleDirection": "Forward"
+        },
+        "shape": "endmill.fcstd",
+        "version": 2
+      },
+      "version": 1,
+      "vfeed": "3.3333333333333335 mm/s",
+      "vrapid": "0.0 mm/s",
+      "xengine": [
+        {
+          "expr": "${SetupSheet}.HorizRapid",
+          "prop": "HorizRapid"
+        },
+        {
+          "expr": "${SetupSheet}.VertRapid",
+          "prop": "VertRapid"
+        }
+      ]
+    },
+    {
+      "dir": "Forward",
+      "hfeed": "3.3333333333333335 mm/s",
+      "hrapid": "0.0 mm/s",
+      "label": "1.2mm_endmill002",
+      "name": "__2mm_endmill001",
+      "nr": 4,
+      "speed": 1000.0,
+      "tool": {
+        "attribute": {},
+        "name": "1.2mm_endmill003",
+        "parameter": {
+          "Chipload": "0.00 mm",
+          "CuttingEdgeHeight": "10.00 mm",
+          "Diameter": "1.20 mm",
+          "Flutes": "0",
+          "Length": "27.00 mm",
+          "Material": "HSS",
+          "ShankDiameter": "3.13 mm",
+          "SpindleDirection": "Forward"
+        },
+        "shape": "endmill.fcstd",
+        "version": 2
+      },
+      "version": 1,
+      "vfeed": "3.3333333333333335 mm/s",
+      "vrapid": "0.0 mm/s",
+      "xengine": [
+        {
+          "expr": "${SetupSheet}.HorizRapid",
+          "prop": "HorizRapid"
+        },
+        {
+          "expr": "${SetupSheet}.VertRapid",
+          "prop": "VertRapid"
+        }
+      ]
+    },
+    {
+      "dir": "Forward",
+      "hfeed": "3.3333333333333335 mm/s",
+      "hrapid": "0.0 mm/s",
+      "label": "1.4mm_Endmill002",
+      "name": "__4mm_Endmill001",
+      "nr": 5,
+      "speed": 1000.0,
+      "tool": {
+        "attribute": {},
+        "name": "1.4mm_Endmill003",
+        "parameter": {
+          "Chipload": "0.00 mm",
+          "CuttingEdgeHeight": "10.00 mm",
+          "Diameter": "1.40 mm",
+          "Flutes": "0",
+          "Length": "27.00 mm",
+          "Material": "HSS",
+          "ShankDiameter": "3.17 mm",
+          "SpindleDirection": "Forward"
+        },
+        "shape": "endmill.fcstd",
+        "version": 2
+      },
+      "version": 1,
+      "vfeed": "3.3333333333333335 mm/s",
+      "vrapid": "0.0 mm/s",
+      "xengine": [
+        {
+          "expr": "${SetupSheet}.HorizRapid",
+          "prop": "HorizRapid"
+        },
+        {
+          "expr": "${SetupSheet}.VertRapid",
+          "prop": "VertRapid"
+        }
+      ]
+    },
+    {
+      "dir": "Forward",
+      "hfeed": "8.333333333333334 mm/s",
+      "hrapid": "0.0 mm/s",
+      "label": "1.6mm_Endmill003",
+      "name": "__6mm_Endmill002",
+      "nr": 14,
+      "speed": 1000.0,
+      "tool": {
+        "attribute": {},
+        "name": "1.6mm_Endmill002",
+        "parameter": {
+          "Chipload": "0.00 mm",
+          "CuttingEdgeHeight": "10.00 mm",
+          "Diameter": "1.60 mm",
+          "Flutes": "0",
+          "Length": "27.00 mm",
+          "Material": "HSS",
+          "ShankDiameter": "3.17 mm",
+          "SpindleDirection": "Forward"
+        },
+        "shape": "endmill.fcstd",
+        "version": 2
+      },
+      "version": 1,
+      "vfeed": "8.333333333333334 mm/s",
+      "vrapid": "0.0 mm/s",
+      "xengine": [
+        {
+          "expr": "${SetupSheet}.HorizRapid",
+          "prop": "HorizRapid"
+        },
+        {
+          "expr": "${SetupSheet}.VertRapid",
+          "prop": "VertRapid"
+        }
+      ]
+    },
+    {
+      "dir": "Forward",
+      "hfeed": "3.3333333333333335 mm/s",
+      "hrapid": "0.0 mm/s",
+      "label": "1.8mm_Endmill001",
+      "name": "__8mm_Endmill002",
+      "nr": 7,
+      "speed": 1000.0,
+      "tool": {
+        "attribute": {},
+        "name": "1.8mm_Endmill",
+        "parameter": {
+          "Chipload": "0.00 mm",
+          "CuttingEdgeHeight": "10.00 mm",
+          "Diameter": "1.80 mm",
+          "Flutes": "0",
+          "Length": "27.00 mm",
+          "Material": "HSS",
+          "ShankDiameter": "3.17 mm",
+          "SpindleDirection": "Forward"
+        },
+        "shape": "endmill.fcstd",
+        "version": 2
+      },
+      "version": 1,
+      "vfeed": "3.3333333333333335 mm/s",
+      "vrapid": "0.0 mm/s",
+      "xengine": [
+        {
+          "expr": "${SetupSheet}.HorizRapid",
+          "prop": "HorizRapid"
+        },
+        {
+          "expr": "${SetupSheet}.VertRapid",
+          "prop": "VertRapid"
+        }
+      ]
+    },
+    {
+      "dir": "Forward",
+      "hfeed": "3.3333333333333335 mm/s",
+      "hrapid": "0.0 mm/s",
+      "label": "2.0mm_Endmill001",
+      "name": "__0mm_Endmill002",
+      "nr": 8,
+      "speed": 1000.0,
+      "tool": {
+        "attribute": {},
+        "name": "2.0mm_Endmill",
+        "parameter": {
+          "Chipload": "0.00 mm",
+          "CuttingEdgeHeight": "10.00 mm",
+          "Diameter": "2.00 mm",
+          "Flutes": "0",
+          "Length": "27.00 mm",
+          "Material": "HSS",
+          "ShankDiameter": "3.17 mm",
+          "SpindleDirection": "Forward"
+        },
+        "shape": "endmill.fcstd",
+        "version": 2
+      },
+      "version": 1,
+      "vfeed": "3.3333333333333335 mm/s",
+      "vrapid": "0.0 mm/s",
+      "xengine": [
+        {
+          "expr": "${SetupSheet}.HorizRapid",
+          "prop": "HorizRapid"
+        },
+        {
+          "expr": "${SetupSheet}.VertRapid",
+          "prop": "VertRapid"
+        }
+      ]
+    },
+    {
+      "dir": "Forward",
+      "hfeed": "3.3333333333333335 mm/s",
+      "hrapid": "0.0 mm/s",
+      "label": "2.2mm_Endmill001",
+      "name": "__2mm_Endmill",
+      "nr": 9,
+      "speed": 1000.0,
+      "tool": {
+        "attribute": {},
+        "name": "2.2mm_Endmill",
+        "parameter": {
+          "Chipload": "0.00 mm",
+          "CuttingEdgeHeight": "10.00 mm",
+          "Diameter": "2.20 mm",
+          "Flutes": "0",
+          "Length": "27.00 mm",
+          "Material": "HSS",
+          "ShankDiameter": "3.17 mm",
+          "SpindleDirection": "Forward"
+        },
+        "shape": "endmill.fcstd",
+        "version": 2
+      },
+      "version": 1,
+      "vfeed": "3.3333333333333335 mm/s",
+      "vrapid": "0.0 mm/s",
+      "xengine": [
+        {
+          "expr": "${SetupSheet}.HorizRapid",
+          "prop": "HorizRapid"
+        },
+        {
+          "expr": "${SetupSheet}.VertRapid",
+          "prop": "VertRapid"
+        }
+      ]
+    },
+    {
+      "dir": "Forward",
+      "hfeed": "3.3333333333333335 mm/s",
+      "hrapid": "0.0 mm/s",
+      "label": "2.4mm_Endmill001",
+      "name": "__4mm_Endmill002",
+      "nr": 10,
+      "speed": 1000.0,
+      "tool": {
+        "attribute": {},
+        "name": "2.4mm_Endmill",
+        "parameter": {
+          "Chipload": "0.00 mm",
+          "CuttingEdgeHeight": "10.00 mm",
+          "Diameter": "2.40 mm",
+          "Flutes": "0",
+          "Length": "27.00 mm",
+          "Material": "HSS",
+          "ShankDiameter": "3.17 mm",
+          "SpindleDirection": "Forward"
+        },
+        "shape": "endmill.fcstd",
+        "version": 2
+      },
+      "version": 1,
+      "vfeed": "3.3333333333333335 mm/s",
+      "vrapid": "0.0 mm/s",
+      "xengine": [
+        {
+          "expr": "${SetupSheet}.HorizRapid",
+          "prop": "HorizRapid"
+        },
+        {
+          "expr": "${SetupSheet}.VertRapid",
+          "prop": "VertRapid"
+        }
+      ]
+    },
+    {
+      "dir": "Forward",
+      "hfeed": "3.3333333333333335 mm/s",
+      "hrapid": "0.0 mm/s",
+      "label": "2.6mm_Endmill001",
+      "name": "__6mm_Endmill",
+      "nr": 11,
+      "speed": 1000.0,
+      "tool": {
+        "attribute": {},
+        "name": "2.6mm_Endmill",
+        "parameter": {
+          "Chipload": "0.00 mm",
+          "CuttingEdgeHeight": "10.00 mm",
+          "Diameter": "2.60 mm",
+          "Flutes": "0",
+          "Length": "27.00 mm",
+          "Material": "HSS",
+          "ShankDiameter": "3.17 mm",
+          "SpindleDirection": "Forward"
+        },
+        "shape": "endmill.fcstd",
+        "version": 2
+      },
+      "version": 1,
+      "vfeed": "3.3333333333333335 mm/s",
+      "vrapid": "0.0 mm/s",
+      "xengine": [
+        {
+          "expr": "${SetupSheet}.HorizRapid",
+          "prop": "HorizRapid"
+        },
+        {
+          "expr": "${SetupSheet}.VertRapid",
+          "prop": "VertRapid"
+        }
+      ]
+    },
+    {
+      "dir": "Forward",
+      "hfeed": "3.3333333333333335 mm/s",
+      "hrapid": "0.0 mm/s",
+      "label": "2.8mm_Endmill001",
+      "name": "__8mm_Endmill003",
+      "nr": 12,
+      "speed": 1000.0,
+      "tool": {
+        "attribute": {},
+        "name": "2.8mm_Endmill",
+        "parameter": {
+          "Chipload": "0.00 mm",
+          "CuttingEdgeHeight": "10.00 mm",
+          "Diameter": "2.80 mm",
+          "Flutes": "0",
+          "Length": "27.00 mm",
+          "Material": "HSS",
+          "ShankDiameter": "3.17 mm",
+          "SpindleDirection": "Forward"
+        },
+        "shape": "endmill.fcstd",
+        "version": 2
+      },
+      "version": 1,
+      "vfeed": "3.3333333333333335 mm/s",
+      "vrapid": "0.0 mm/s",
+      "xengine": [
+        {
+          "expr": "${SetupSheet}.HorizRapid",
+          "prop": "HorizRapid"
+        },
+        {
+          "expr": "${SetupSheet}.VertRapid",
+          "prop": "VertRapid"
+        }
+      ]
+    },
+    {
+      "dir": "Forward",
+      "hfeed": "3.3333333333333335 mm/s",
+      "hrapid": "0.0 mm/s",
+      "label": "3.0mm_Endmill001",
+      "name": "__0mm_Endmill003",
+      "nr": 13,
+      "speed": 1000.0,
+      "tool": {
+        "attribute": {},
+        "name": "3.0mm_Endmill",
+        "parameter": {
+          "Chipload": "0.00 mm",
+          "CuttingEdgeHeight": "10.00 mm",
+          "Diameter": "3.00 mm",
+          "Flutes": "0",
+          "Length": "27.00 mm",
+          "Material": "HSS",
+          "ShankDiameter": "3.17 mm",
+          "SpindleDirection": "Forward"
+        },
+        "shape": "endmill.fcstd",
+        "version": 2
+      },
+      "version": 1,
+      "vfeed": "3.3333333333333335 mm/s",
+      "vrapid": "0.0 mm/s",
+      "xengine": [
+        {
+          "expr": "${SetupSheet}.HorizRapid",
+          "prop": "HorizRapid"
+        },
+        {
+          "expr": "${SetupSheet}.VertRapid",
+          "prop": "VertRapid"
+        }
+      ]
+    },
+    {
+      "dir": "Forward",
+      "hfeed": "3.3333333333333335 mm/s",
+      "hrapid": "0.0 mm/s",
+      "label": "3.175mm_endmill008",
+      "name": "__175mm_endmill007",
+      "nr": 6,
+      "speed": 1000.0,
+      "tool": {
+        "attribute": {},
+        "name": "3.175mm_endmill009",
+        "parameter": {
+          "Chipload": "0.00 mm",
+          "CuttingEdgeHeight": "10.00 mm",
+          "Diameter": "3.17 mm",
+          "Flutes": "0",
+          "Length": "27.00 mm",
+          "Material": "HSS",
+          "ShankDiameter": "3.17 mm",
+          "SpindleDirection": "Forward"
+        },
+        "shape": "endmill.fcstd",
+        "version": 2
+      },
+      "version": 1,
+      "vfeed": "3.3333333333333335 mm/s",
+      "vrapid": "0.0 mm/s",
+      "xengine": [
+        {
+          "expr": "${SetupSheet}.HorizRapid",
+          "prop": "HorizRapid"
+        },
+        {
+          "expr": "${SetupSheet}.VertRapid",
+          "prop": "VertRapid"
+        }
+      ]
+    }
+  ],
+  "Version": 1
+}
